@@ -1,7 +1,10 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatCardModule} from '@angular/material/card';
-
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AngularFireAuth } from "@angular/fire/auth";
+import {  ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { XyzComponent } from './xyz/xyz.component';
 import { MenuComponent } from './menu/menu.component';
@@ -16,10 +19,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { AngularFireModule } from '@angular/fire';
 import {FormsModule} from '@angular/forms'
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
-
-
-
+import { environment } from './../environments/environment';
 import {RouterModule} from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -31,7 +31,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { CoreaComponent } from './components/corea/corea.component';
 import { TronosComponent } from './components/tronos/tronos.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -69,6 +69,12 @@ const rutas = [
    component:LoginComponent
  },
 
+ {
+  path:'register',
+  component:RegisterComponent
+},
+
+
   { path: '**', 
   component:NotfoundComponent  }
 
@@ -96,7 +102,7 @@ const rutas = [
     CoreaComponent,
     TronosComponent,
     LoginComponent,
-    RegistroComponent,
+    RegisterComponent,
     
    
   ],
@@ -109,10 +115,13 @@ const rutas = [
     RouterModule.forRoot(rutas),
     NgbModule,
     MatFormFieldModule,
-    FormsModule,
-    MatListModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
-    MatCardModule,
+    ReactiveFormsModule,
+    FormsModule
+  
    
   ],
   providers: [Servicios],

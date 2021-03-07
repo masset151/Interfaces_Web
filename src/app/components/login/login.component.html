@@ -1,37 +1,31 @@
-<div class="container">
-    <div class="row m-3">
-        <div class="col-12">
-            <mat-card class="example-card ">
-                <mat-card-header>
-                    <mat-card-title>Login</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <form class="example-form">
-
-                        <table class="example-full-width" cellspacing="0">
-                            <tr>
-                                <td>
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput type="email" name="email" placeholder="Email"
-                                            [(ngModel)]="auth.email" required>
-                                    </mat-form-field>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput type="password" name="contraseña" placeholder="Password"
-                                            [(ngModel)]="auth.contrase" required>
-                                    </mat-form-field>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a (click)="auth.login()"><button mat-raised-button class="button" type="submit">Login</button></a>
-                </mat-card-actions>
-            </mat-card>
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center">Inicia Sesion en MassetTravel</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" formControlName="email" />
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+              />
+            </div>
+            <button class="btn btn-primary btn-lg btn-block">
+              Login
+            </button>
+          </form>
+          <div class="form-group mt-3">
+            <p>
+              ¿No tienes cuenta?, unete y disfruta de nuestras ventajas <a [routerLink]="['/register']"> Registrate </a>
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>

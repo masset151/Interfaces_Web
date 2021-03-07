@@ -1,35 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+
+
+import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../../auth.service';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
-
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  template: `
-  <input [(ngModel)]="name" #ctrl="ngModel" required>
-
-  <p>Value: {{ name }}</p>
-  <p>Valid: {{ ctrl.valid }}</p>
-
-  <button (click)="setValue()">Set value</button>
-`,
+  providers: [AuthService],
 })
-
-
-
-
 export class LoginComponent implements OnInit {
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
-  constructor(public auth: AuthService) {}
-  
+  constructor(private authSvc: AuthService, private router: Router){ }
+
   ngOnInit(): void {
-  } 
- 
+  }
+ async onLogin(){
+    const {email, password} = this.loginForm.value;
+    try{
+      const user = await this.authSvc.login(email, password);
+      if(user){
+        this.router.navigate(['/']);
+        alert("Hola"+email);
+      }else{
+        alert("Fallo de Aunteticacion")
+      }
+    }
+    catch(error){console.log(error);
+      
+    }
+    
+  }
 }
+
+
+
