@@ -1,9 +1,36 @@
-<html>
-  <head>
-      <title>Zona Carnaval</title>
-  </head>
-  <body>
-    <sidenav></sidenav>
+<sidenav></sidenav>
 
-  </body>
-</html>
+<div class="container-fluid">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="wrapper">
+        <a routerLink="/sevilla" routerLinkActive="active"><img src="https://i2.wp.com/bartapassevilla.com/wp-content/uploads/2016/02/semana-santa-sevilla-dia-p.jpg" width="900" height="500" alt="Random first slide"></a>
+      </div>
+      <div class="carousel-caption">
+        <h3>Visita la Semana Santa de Sevilla</h3>
+        <p> Hotel + Abono en la Campana 2000€ </p>
+       
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="wrapper">
+        <a routerLink="/corea" routerLinkActive="active"><img src='https://www.lavanguardia.com/files/image_449_220/uploads/2018/09/17/5fa45077c71e5.jpeg' width="900" height="500" alt="Random second slide"></a>
+        
+      </div>
+      <div class="carousel-caption">
+        <h3>Corea del Norte</h3>
+        <p> Visita el pais mas aislado del planeta somos una de las agencias autorizadas por el Gobierno Norcoreano</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="wrapper">
+        <a routerLink="/login" routerLinkActive="active"> <img [src]="images[2]"  alt="Random third slide"></a>
+      </div>
+      <div class="carousel-caption">
+        <h3>Vista El Cuello</h3>
+        <p>Visita donde el bosque en el que se grabo juego de tronos</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  
+<router-outlet></router-outlet>

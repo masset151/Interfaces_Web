@@ -15,7 +15,7 @@
    }
    
    nav a:hover{
-    background-color: chartreuse;
+    background-color: blue;
    }
    
    section, footer, header, aside, nav{
@@ -27,14 +27,14 @@
    nav{
     display:inline-block;
     margin:0px auto 45px;
-    background-color:#F2D72E;
+    background-color:black;
     box-shadow:0 1px 1px #ccc;
     border-radius:2px;
    }
    
    nav a{
     display:inline-block;
-    padding: 18px 53px;
+    padding: 15px 301px;
     color:#fff !important;
     font-weight:bold;
     font-size:12px;

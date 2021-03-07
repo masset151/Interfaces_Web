@@ -1,18 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import {AuthService} from './auth.service';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-
-
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-carrusel',
+  templateUrl: './carrusel.component.html',
+  styleUrls: ['./carrusel.component.css']
 })
-
-
-export class AppComponent {
-  title = 'curriculum';
+export class CarruselComponent implements OnInit {
   images = [700, 800, 807].map((n) => `https://picsum.photos/id/${n}/900/500`);
   
   constructor(config: NgbCarouselConfig) { 
@@ -25,4 +20,7 @@ export class AppComponent {
 
   ngOnInit(): void {
   }
+
+ 
+
 }

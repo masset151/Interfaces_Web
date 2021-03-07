@@ -2,13 +2,12 @@
 
 <div id="main">
 
-    <nav class="{{active}}" ng-click="$event.preventDefault()" ng-init="active='2020'">
-    <a href="#" class="inicio" ng-click="active='inicio'">inicio</a>
-    <a href="#" class="2020" ng-click="active='2020'">Carnaval 2020</a>
-    <a href="#" class="2019" ng-click="active='2019'">Carnaval 2019</a>
-    <a href="#" class="2019" ng-click="active='2019'">Carnaval 2018</a>
-    <a href="#" class="2019" ng-click="active='2019'">Carnaval 2017</a>
-    <a href="#" class="2019" ng-click="active='2019'">Carnaval 2016</a>
-    <a href="#" class="otros" ng-click="active='otros'">Carnaval Otro años</a>
+    <nav>
+    <a routerLink="/login" routerLinkActive="active">login</a>
+    <a href="#" class="drama" ng-click="active='registarse'">registarse</a>
+  
+    <!--<a href="#" class="2019" ng-click="active='2019'">Carnaval 2016</a>-->
+
+    
  </nav>
 </div>
