@@ -16,9 +16,7 @@ export class CoreaComponent implements OnInit {
     config.pauseOnHover = false;  
   }  
   
-  sevilla(){
-    window.open("sevilla.component.html")
-  }
+  
   
   ngOnInit() {  
   }  
