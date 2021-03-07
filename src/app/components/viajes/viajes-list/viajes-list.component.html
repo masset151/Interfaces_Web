@@ -1,0 +1,19 @@
+<table>
+    <thead>
+      <th>ID</th>
+      <th>Lugar</th>
+      <th>Precio</th>
+      <th>Amount</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let viaje of viajes">
+  
+        <td>{{viajes.id}}</td>
+        <td>{{viajes.lugar}}</td>
+        <td>{{viajes.precio}}</td>
+        <td>
+            <button (click)="delete(viake.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

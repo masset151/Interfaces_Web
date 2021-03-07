@@ -32,6 +32,8 @@ import { CoreaComponent } from './components/corea/corea.component';
 import { TronosComponent } from './components/tronos/tronos.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ViajesService } from './components/viajes/viajes.component';
+import { ViajesListComponent } from './components/viajes/viajes-list/viajes-list.component';
 
 
 
@@ -74,9 +76,26 @@ const rutas = [
   component:RegisterComponent
 },
 
+{
+  path:'viajes',
+  Component:ViajesService,children:[
+    {
+      path:'viajes',
+      component:ViajesService
+    },
+    {path:'list',
+    component:ViajesListComponent
+    }
 
-  { path: '**', 
-  component:NotfoundComponent  }
+    
+  ]
+},
+
+
+
+  { 
+    path: '**', 
+  component:NotfoundComponent  },
 
 
 
@@ -103,6 +122,8 @@ const rutas = [
     TronosComponent,
     LoginComponent,
     RegisterComponent,
+    ViajesService,
+    ViajesListComponent,
     
    
   ],
