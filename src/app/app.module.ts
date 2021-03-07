@@ -80,7 +80,7 @@ const rutas = [
   path:'viajes',
   Component:ViajesService,children:[
     {
-      path:'viajes',
+      path:'viaje',
       component:ViajesService
     },
     {path:'list',
