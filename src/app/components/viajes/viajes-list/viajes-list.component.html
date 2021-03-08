@@ -3,7 +3,7 @@
       <th>ID</th>
       <th>Lugar</th>
       <th>Precio</th>
-      <th>Amount</th>
+
     </thead>
     <tbody>
       <tr *ngFor="let viaje of viajes">
@@ -12,7 +12,7 @@
         <td>{{viajes.lugar}}</td>
         <td>{{viajes.precio}}</td>
         <td>
-            <button (click)="delete(viake.id)">Delete</button>
+            <button (click)="delete(viaje.id)">Delete</button>
         </td>
       </tr>
     </tbody>
